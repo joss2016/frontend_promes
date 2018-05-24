@@ -21,7 +21,7 @@
 const drawerWidth = 260;
 
 const transition = {
-  transition: "all 0.33s cubic-bezier(0.685, 0.0473, 0.346, 1)"
+  transition: "all 0.33s cubic-bezier(0.685, 0.0473, 0.346, 1)"//solo es una animación de un banner con la curva de bezier
 };
 
 const container = {
@@ -108,7 +108,7 @@ const cardActions = {
   paddingTop: "10px",
   borderTop: "1px solid #eeeeee",
   height: "auto",
-  ...defaultFont
+  ...defaultFont//https://stackoverflow.com/questions/31048953/what-do-these-three-dots-in-react-do?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
 };
 
 const cardHeader = {
