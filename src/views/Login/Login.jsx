@@ -18,13 +18,13 @@ axios.defaults.withCredentials = true;
 axios.post('http://localhost:8000/login/', { username: 'eric', password: 'Kafuuchino7'})
   .then(rv => {
     console.log('Login', rv)
-    updateStuff();
+    //updateStuff();
   })
   .catch(err => {
-    console.log('Login error', err.response)
+    console.log('Login error-problema', err.response)
   })
-const updateStuff = () => {
-  axios.patch('http://localhost:8000/api/stuffs/1/', { quantity: 2 })
+const updateStuff = (e) => {
+  axios.patch('http://localhost:8000/api/stuffs/1/', { quantity: 10 })
     .then(resp => {
       console.log('Update response', resp)
     })
@@ -43,33 +43,31 @@ class Login extends Component {
   }
   handleClick(event){
     var self = this
-    console.log(this)
+    //console.log(this)
 
    var payload={
-      "username":this.state.username,
-      "password":this.state.password,
+      //"username":"eric",
+        "username":this.state.username,
+	  	"password":this.state.password,
+      //"password":"Kafuuchino7",
     }
     
- 
+ console.log(payload)
 
     axios.post(apiBaseUrl+'login/', payload)
      .then(rv => {
-    console.log('Login', rv)
+    console.log('Login-2', rv)
     updateStuff();
     
   })
   .catch(err => {
-    console.log('Login error', err.response)
+    console.log('Login error-roblema-post', err.response),
+    console.log('Login error-roblema-poste', err.message)
   })
-  const updateStuff = () => {
-  axios.patch('http://localhost:8000/api/stuffs/1/', { quantity: 5 })
-    .then(resp => {
-      console.log('Update response', resp)
-    })
-    .catch(error => {
-      console.log("Update error", error)
-    })
-  }
+   event.preventDefault();
+
+     //return false
+
 }
 onEnterPress = (e) => {
   if(e.keyCode == 13 && e.shiftKey == false) {
@@ -77,6 +75,17 @@ onEnterPress = (e) => {
     this.handleClick(e)
   }
 }
+  handleChange = username => event => {
+    this.setState({
+      [username]: event.target.value,
+    });
+  }
+    handleChangeP = username => event => {
+    this.setState({
+      [username]: event.target.value,
+    });
+  }
+
 
   render() {
     return (
@@ -86,9 +95,10 @@ onEnterPress = (e) => {
         <h2>Login</h2>
 
          <TextField
-             onKeyDown={this.onEnterPress}
-           label="Ingrese su nombre de usuario"
-           onChange = {(event,newValue)=>this.setState({username:newValue})}
+            onKeyDown={this.onEnterPress}
+            id="username"
+             label="Ingrese su usuario"
+		   	onChange={this.handleChange('username')}
             style={{width:"300px"}}
            />
          <br/>
@@ -96,11 +106,11 @@ onEnterPress = (e) => {
              onKeyDown={this.onEnterPress}
              type="password"
              label="Ingrese su contraseña"
-             onChange = {(event,newValue) => this.setState({password:newValue})}
+		   	onChange={this.handleChangeP('password')}
             style={{width:"300px"}}
              />
            <br/>
-           <Button variant="raised" ref={el => this.miSubmit = el} type="submit" label="Submit" primary={true} color="primary" style={style} onClick={(event) => this.handleClick(event),this.handleClick.bind(this) }>Ingresar</Button>	
+           <Button variant="raised" ref={el => this.miSubmit = el} type="submit" label="Submit"  color="primary" style={style} onClick={(event) => this.handleClick(event),this.handleClick.bind(this) }>Ingresar</Button>	
        </form>
       
 </center>

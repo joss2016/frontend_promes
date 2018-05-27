@@ -17,8 +17,8 @@ function UserProfile({ ...props }) {
       <Grid container>
         <ItemGrid xs={12} sm={12} md={8}>
           <RegularCard
-            cardTitle="Edit Profile"
-            cardSubtitle="Complete your profile"
+            cardTitle="Perfil del paciente"
+            cardSubtitle="Historia médico"
             content={
               <div>
                 <Grid container>
@@ -122,7 +122,7 @@ function UserProfile({ ...props }) {
                 </Grid>
               </div>
             }
-            footer={<Button color="primary">Update Profile</Button>}
+            footer={<Button color="primary">Actualizar datos</Button>}
           />
         </ItemGrid>
         <ItemGrid xs={12} sm={12} md={4}>
@@ -133,7 +133,7 @@ function UserProfile({ ...props }) {
             description="Don't be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is..."
             footer={
               <Button color="primary" round>
-                Follow
+                Ver
               </Button>
             }
           />

@@ -12,7 +12,7 @@ function Icons({ ...props }) {
       <ItemGrid xs={12} sm={12} md={12}>
         <RegularCard
           plainCard
-          cardTitle="Material Design Icons"
+          cardTitle="Control de inventarios"
           cardSubtitle={
             <P>
               Handcrafted by our friends from{" "}

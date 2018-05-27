@@ -40,7 +40,7 @@ class Notifications extends React.Component {
   render() {
     return (
       <RegularCard
-        cardTitle="Notifications"
+        cardTitle="Notificaciones"
         cardSubtitle={
           <P>
             Handcrafted by our friends from{" "}
@@ -60,7 +60,7 @@ class Notifications extends React.Component {
           <div>
             <Grid container>
               <ItemGrid xs={12} sm={12} md={6}>
-                <h5>Notifications Style</h5>
+                <h5>Estilos de notificationes</h5>
                 <br />
                 <SnackbarContent message={"This is a plain notification"} />
                 <br />
@@ -85,7 +85,7 @@ class Notifications extends React.Component {
                 <br />
               </ItemGrid>
               <ItemGrid xs={12} sm={12} md={6}>
-                <h5>Notifications States</h5>
+                <h5>Estados de notifications</h5>
                 <br />
                 <SnackbarContent
                   message={

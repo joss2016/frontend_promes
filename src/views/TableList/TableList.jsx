@@ -8,7 +8,7 @@ function TableList({ ...props }) {
     <Grid container>
       <ItemGrid xs={12} sm={12} md={12}>
         <RegularCard
-          cardTitle="Simple Table"
+          cardTitle="Tabla de ejemplo"
           cardSubtitle="Here is a subtitle for this table"
           content={
             <Table
