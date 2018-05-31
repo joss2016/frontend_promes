@@ -15,7 +15,7 @@ axios.defaults.xsrfHeaderName = "X-CSRFTOKEN";
 axios.defaults.xsrfCookieName = "csrftoken";
 axios.defaults.withCredentials = true;
 
-axios.post('http://localhost:8000/login/', { username: 'eric', password: 'Kafuuchino7'})
+axios.post('http://localhost:8000/login/', { username: '', password: ''})
   .then(rv => {
     console.log('Login', rv)
     //updateStuff();
@@ -66,7 +66,7 @@ class Login extends Component {
   })
    event.preventDefault();
 
-     //return false
+     //return false :v/
 
 }
 onEnterPress = (e) => {
